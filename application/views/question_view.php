@@ -13,15 +13,15 @@ and open the template in the editor.
 
     <title>Check your knowledge and have fun</title>
 
-    <link rel="shortcut icon" href="../../assets/images/gt_favicon.png">
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/gt_favicon.png">
 
     <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
-    <link rel="stylesheet" href="../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome.min.css">
 
     <!-- Custom styles for our template -->
-    <link rel="stylesheet" href="../../assets/css/bootstrap-theme.css" media="screen">
-    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-theme.css" media="screen">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/main.css">
 </head>
 
 <body class="home" onload="getSessionTime()">
@@ -32,7 +32,7 @@ and open the template in the editor.
             <!-- Button for smallest screens -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span
                     class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
-            <a class="navbar-brand" href="index.html"><img src="../../assets/images/quiz.png"> QUIZ TIME</a>
+            <a class="navbar-brand" href="index.html"><img src="<?php echo base_url(); ?>assets/images/quiz.png"> QUIZ TIME</a>
 
         </div>
     </div>
@@ -44,7 +44,7 @@ and open the template in the editor.
     <div class="container">
         <!-- Category View -->
         <?php if (isset($category) && !isset($results)) { ?>
-            <form name="userinput" action="getQuestionFromCategory" method="post">
+            <form name="userinput" action="quiz/questions/get" method="post">
                 <br><br><br>
 
                 <h1>Select a quiz category according to your area of interest</h1>
@@ -72,7 +72,7 @@ and open the template in the editor.
         } else if (isset($question)) {
         ?>
         <!-- Question view -->
-        <form name="userinput" action="getNextQuestions" method="post">
+        <form name="userinput" action="next" method="post">
             <div id="remain_question_timer">
                 <div class="col-lg-6"><h3>QUESTION <?php echo $question[0]["question_number"] ?>/10</h3></div>
                 <div class="col-lg-6"><h3 align="left" id="timer">00.00</h3></div>
@@ -159,10 +159,10 @@ and open the template in the editor.
 </footer>
 
 <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-<script type="text/javascript" src="../../assets/js/timehandle.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/timehandle.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="../../assets/js/headroom.min.js"></script>
-<script src="../../assets/js/headroom.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/headroom.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/headroom.min.js"></script>
 </body>
 </html> 

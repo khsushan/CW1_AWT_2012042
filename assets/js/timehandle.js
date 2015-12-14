@@ -12,8 +12,8 @@ function getSessionTime() {
     var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
     var time = localStorage.getItem("time");
     var timeTxt = document.getElementById('try_again_btn');
-    if ((sPage == 'getQuestionFromCategory'
-            || sPage == 'getNextQuestions')
+    if ((sPage == 'get'
+            || sPage == 'next')
             && timeTxt == null) {
         if (time) {
             document.getElementById('time_store').value = time;
